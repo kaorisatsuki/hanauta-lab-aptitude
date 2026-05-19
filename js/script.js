@@ -97,11 +97,11 @@ function showResult() {
   document.getElementById('result-message').textContent = type.message;
 
   // シェア用テキスト
-  const shareText = `私のHanauta Lab.お仕事タイプは「${type.name}」でした🌸\n${type.catchphrase}\n\nあなたも診断してみませんか？`;
+  const shareText = `Hanauta Lab.式お仕事タイプ診断、私は「${type.name}」でした🌸\n${type.catchphrase}\n\n働き方にも、似合うものがある。\nあなたも2分で診断してみませんか？`;
 
   // X(Twitter)シェア
   document.getElementById('share-x').href =
-    `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(SITE_URL)}&hashtags=ハナウタラボ,お仕事タイプ診断`;
+    `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(SITE_URL)}&hashtags=お仕事タイプ診断,ハナウタラボ,自分のトリセツ`;
 
   // LINEシェア
   document.getElementById('share-line').href =
@@ -167,9 +167,9 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('result-related').textContent = type.relatedWorks;
     document.getElementById('result-message').textContent = type.message;
 
-    const shareText = `私のHanauta Lab.お仕事タイプは「${type.name}」でした🌸\n${type.catchphrase}\n\nあなたも診断してみませんか？`;
+    const shareText = `Hanauta Lab.式お仕事タイプ診断、私は「${type.name}」でした🌸\n${type.catchphrase}\n\n働き方にも、似合うものがある。\nあなたも2分で診断してみませんか？`;
     document.getElementById('share-x').href =
-      `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(SITE_URL)}&hashtags=ハナウタラボ,お仕事タイプ診断`;
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(SITE_URL)}&hashtags=お仕事タイプ診断,ハナウタラボ,自分のトリセツ`;
     document.getElementById('share-line').href =
       `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(shareText)}`;
     document.getElementById('copy-text').dataset.share = shareText + '\n' + SITE_URL;

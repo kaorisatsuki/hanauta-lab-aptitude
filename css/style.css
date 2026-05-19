@@ -62,13 +62,31 @@ body {
   background: var(--color-card);
   border-radius: var(--radius);
   padding: 36px 24px;
+  padding-top: 0;
+  overflow: hidden;
   text-align: center;
   box-shadow: var(--shadow);
   margin-top: 8px;
 }
-.intro .hero-emoji {
-  font-size: 40px;
-  margin-bottom: 12px;
+.hero-image {
+  width: calc(100% + 48px);
+  margin: 0 -24px 20px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: block;
+}
+.intro .tagline-top {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+.intro .tagline-bottom {
+  font-size: 14px;
+  color: var(--color-text-sub);
+  margin-top: 12px;
+  margin-bottom: 24px;
+  font-style: italic;
 }
 .intro h1 {
   font-size: 22px;
