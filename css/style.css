@@ -1,0 +1,380 @@
+/* Hanauta Lab. 作業適性診断 スタイル */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg: #FAF7F2;
+  --color-text: #3A3530;
+  --color-text-sub: #7A736B;
+  --color-text-light: #B5AEA5;
+  --color-primary: #7B9B7E;
+  --color-primary-light: #C5D5C5;
+  --color-accent: #D4A574;
+  --color-card: #FFFFFF;
+  --color-border: #E8E2D8;
+  --shadow: 0 2px 12px rgba(122, 115, 107, 0.06);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: 15px;
+  min-height: 100vh;
+  padding: 20px 16px 60px;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ===== ヘッダー ===== */
+.header {
+  text-align: center;
+  padding: 24px 0 16px;
+}
+.header .brand {
+  font-size: 11px;
+  color: var(--color-text-light);
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+.header .logo {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+/* ===== 画面切り替え ===== */
+.screen { display: none; }
+.screen.active { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== イントロ画面 ===== */
+.intro {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-top: 8px;
+}
+.intro .hero-emoji {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+.intro h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.intro .lead {
+  color: var(--color-text-sub);
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.9;
+}
+.intro .meta {
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin-bottom: 28px;
+  padding: 12px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  padding: 14px 40px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:active { transform: scale(0.98); }
+
+/* ===== 質問画面 ===== */
+.question-screen {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 28px 22px 32px;
+  box-shadow: var(--shadow);
+  margin-top: 8px;
+}
+.progress {
+  margin-bottom: 28px;
+}
+.progress-track {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  width: 0%;
+  transition: width 0.4s ease;
+}
+.progress-text {
+  font-size: 11px;
+  color: var(--color-text-light);
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.question-text {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin: 12px 0 28px;
+  line-height: 1.6;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.option-btn {
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+.option-btn:hover {
+  border-color: var(--color-primary);
+  background: #fff;
+}
+.option-btn:active { transform: scale(0.99); }
+
+/* ===== 結果画面 ===== */
+.result-screen {
+  margin-top: 8px;
+}
+.result-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 32px 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.result-label {
+  font-size: 11px;
+  color: var(--color-text-light);
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+.result-emoji {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+.result-name {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.result-catchphrase {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.result-description {
+  text-align: left;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--color-text);
+  padding: 16px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.section-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+.section-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+  letter-spacing: 0.05em;
+}
+.section-card .works-list {
+  list-style: none;
+  padding: 0;
+}
+.section-card .works-list li {
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+  position: relative;
+  line-height: 1.6;
+}
+.section-card .works-list li:last-child { border-bottom: none; }
+.section-card .works-list li::before {
+  content: '🌿';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-size: 13px;
+}
+.section-card .related-works {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--color-border);
+  font-size: 12px;
+  color: var(--color-text-sub);
+  text-align: center;
+}
+.section-card .related-works strong {
+  display: block;
+  font-size: 10px;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  font-weight: normal;
+}
+
+.message-card {
+  background: linear-gradient(135deg, #F5F1E8 0%, #EDE6D6 100%);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+/* ===== LINEセクション ===== */
+.line-section {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.line-section p {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+.btn-line {
+  display: inline-block;
+  background: #06C755;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 28px;
+  padding: 14px 36px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  letter-spacing: 0.05em;
+}
+.btn-line:hover { opacity: 0.9; }
+
+/* ===== シェアセクション ===== */
+.share-section {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.share-section h3 {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  padding: 10px 18px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--color-text);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.share-btn:hover {
+  background: #fff;
+  border-color: var(--color-primary);
+}
+
+/* ===== 戻るボタン ===== */
+.retry-section {
+  text-align: center;
+  margin-top: 20px;
+}
+.btn-retry {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-sub);
+  border-radius: 22px;
+  padding: 10px 24px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.btn-retry:hover {
+  background: var(--color-card);
+  border-color: var(--color-primary);
+}
+
+/* ===== フッター ===== */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 11px;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+}
+.footer a { color: var(--color-text-sub); text-decoration: none; }
+
+/* ===== レスポンシブ ===== */
+@media (min-width: 600px) {
+  body { padding: 40px 24px 80px; }
+  .intro h1 { font-size: 26px; }
+  .question-text { font-size: 20px; }
+}
